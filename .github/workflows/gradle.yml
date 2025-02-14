@@ -33,11 +33,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Set up environment variables
-      run: |
-          echo "MYSQL_URL=${{ secrets.MYSQL_RUL }}" >> $GITHUB_ENV
-          echo "MYSQL_USER=${{ secrets.MYSQL_USER }}" >> $GITHUB_ENV
-          echo "MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}" >> $GITHUB_ENV
+    # - name: Set up environment variables
+    #   run: |
+    #       echo "MYSQL_URL=${{ secrets.MYSQL_RUL }}" >> $GITHUB_ENV
+    #       echo "MYSQL_USER=${{ secrets.MYSQL_USER }}" >> $GITHUB_ENV
+    #       echo "MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}" >> $GITHUB_ENV
 
     # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
