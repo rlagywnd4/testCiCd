@@ -7,18 +7,18 @@ on:
     branches: [ "develop" ]
 
 jobs:
-  # build:
-  #   runs-on: ubuntu-latest
-  #   services:
-  #     mysql:
-  #       image: mysql:8.0
-  #       env:
-  #         MYSQL_ROOT_PASSWORD: root
-  #         MYSQL_DATABASE: testdb
-  #         MYSQL_USER: root
-  #         MYSQL_PASSWORD: 1234
-  #       ports:
-  #         - 3306:3306
+  build:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: testdb
+          MYSQL_USER: root
+          MYSQL_PASSWORD: 1234
+        ports:
+          - 3306:3306
   testci:
 
     runs-on: ubuntu-latest
@@ -33,11 +33,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    # - name: Set up environment variables
-    #   run: |
-    #       echo "MYSQL_URL=${{ secrets.MYSQL_RUL }}" >> $GITHUB_ENV
-    #       echo "MYSQL_USER=${{ secrets.MYSQL_USER }}" >> $GITHUB_ENV
-    #       echo "MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}" >> $GITHUB_ENV
+    - name: Set up environment variables
+      run: |
+          echo "MYSQL_URL=${{ secrets.MYSQL_URL }}" >> $GITHUB_ENV
+          echo "MYSQL_USER=${{ secrets.MYSQL_USER }}" >> $GITHUB_ENV
+          echo "MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}" >> $GITHUB_ENV
 
     # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
