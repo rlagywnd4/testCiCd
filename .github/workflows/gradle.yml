@@ -7,18 +7,18 @@ on:
     branches: [ "develop" ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    services:
-      mysql:
-        image: mysql:8.0
-        env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: testdb
-          MYSQL_USER: root
-          MYSQL_PASSWORD: 1234
-        ports:
-          - 3306:3306
+  # build:
+  #   runs-on: ubuntu-latest
+  #   services:
+  #     mysql:
+  #       image: mysql:8.0
+  #       env:
+  #         MYSQL_ROOT_PASSWORD: root
+  #         MYSQL_DATABASE: testdb
+  #         MYSQL_USER: root
+  #         MYSQL_PASSWORD: 1234
+  #       ports:
+  #         - 3306:3306
   testci:
 
     runs-on: ubuntu-latest
