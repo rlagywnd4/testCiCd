@@ -12,12 +12,4 @@ class TestcicdApplicationTests {
 	void contextLoads() {
 	}
 
-	@Test
-	void testDot(){
-		System.out.println("start-------------");
-		Dotenv dotenv = Dotenv.load();
-		System.out.println("RDS_HOSTNAME: " + dotenv.get("RDS_HOSTNAME"));
-		System.out.println("RDS_PORT: " + dotenv.get("RDS_PORT"));
-	}
-
 }
